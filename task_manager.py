@@ -1,12 +1,10 @@
 import streamlit as st
+
 def display_menu():
-    st.write("\nTask Manager")
-    st.write("============")
-    st.write("1. View Tasks")
-    st.write("2. Add Task")
-    st.write("3. Mark Task as Done")
-    st.write("4. Remove Task")
-    st.write("5. Exit")
+    st.sidebar.title("Task Manager")
+    menu = ["View Tasks", "Add Task", "Mark Task as Done", "Remove Task", "Exit"]
+    choice = st.sidebar.radio("Select an option:", menu, key="menu")
+    return choice
 
 def view_tasks(tasks):
     if not tasks:
